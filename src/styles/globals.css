@@ -1,6 +1,4 @@
 :root {
-	--max-width: 1100px;
-	--border-radius: 12px;
 	--font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
 		"Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
 		"Fira Mono", "Droid Sans Mono", "Courier New", monospace;
@@ -12,4 +10,27 @@ body {
 	overflow-x: hidden;
 	font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
 		"Arial", sans-serif;
+	background-color: darkslategrey;
+	color: white;
+}
+
+.loading-div {
+	width: 45%;
+	height: auto;
+	position: static;
+	text-align: center;
+	margin: 20% auto;
+}
+
+.loading-div > img {
+	margin: 0 auto;
+}
+
+.img-loading {
+	opacity: 0;
+}
+
+.img-loaded {
+	opacity: 100;
+	transition: opacity 5s;
 }
