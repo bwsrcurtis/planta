@@ -1,7 +1,14 @@
-const signup = () => {
+import Head from 'next/head';
+
+function Signup() {
 	return (
-		<div>signup</div>
+		<>
+			<Head>
+				<title>Signup</title>
+			</Head>
+			<div>signup</div>
+		</>
 	);
 };
 
-export default signup;
+export default Signup;

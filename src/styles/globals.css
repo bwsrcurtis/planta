@@ -30,13 +30,13 @@ body {
 	margin: 0 auto;
 }
 
-.img-loading {
+.is-loading {
 	opacity: 0;
 }
 
-.img-loaded {
+.is-loaded {
 	opacity: 100;
-	transition: opacity 3s;
+	transition: opacity 2s;
 }
 
 .login-flex {

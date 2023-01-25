@@ -1,8 +1,14 @@
 import React from 'react';
+import Head from 'next/head';
 
 const plants = () => {
 	return (
-		<div>plants</div>
+		<>
+			<Head>
+				<title>My Plants</title>
+			</Head>
+			<div>plants</div>
+		</>
 	);
 };
 
