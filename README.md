@@ -5,6 +5,8 @@
 ### Todos
 [X] Intro Page
 
+[X] Login Page
+
 [ ] Plant Info Upload
 
 [ ] Login and Auth
