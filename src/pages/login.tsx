@@ -26,7 +26,8 @@ function Login() {
 					<h2>Password:</h2>
 					<input className="password-input" type="text" placeholder="Password"></input>
 					<div>
-						<Button name='Login'></Button>
+						<Link href="/plants" passHref={true}>
+							<Button name='Login'></Button></Link>
 						<Link href="/signup" passHref={true}>
 							<Button name='Signup'></Button></Link>
 					</div>
