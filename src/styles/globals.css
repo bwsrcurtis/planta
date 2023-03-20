@@ -6,6 +6,7 @@
 		"Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 	--main-bg-color: darkslategrey;
 	--form-bg-color: rgb(38, 104, 66);
+	--green-accent-color: #7cb041;
 	--light-accent-color: #e64a18;
 	--dark-accent-color: #bb350c;
 }
@@ -41,6 +42,10 @@ body {
 .is-loaded {
 	opacity: 100;
 	transition: opacity 2s;
+}
+
+.title {
+	text-shadow: 2px 2px var(--green-accent-color);
 }
 
 .login-flex {

@@ -20,7 +20,7 @@ function Signup() {
 				<div className={`signup-form ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
 					<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
 						width={100} height={100} onLoadingComplete={() => fadeIn()}></Image>
-					<h1>Planta</h1>
+					<h1 className="title">Planta</h1>
 					<div className="details">
 						<h3>First Name:</h3>
 						<input type="text" placeholder="First Name"></input>
@@ -31,7 +31,7 @@ function Signup() {
 						<h3>Email:</h3>
 						<input type="text" placeholder="Email"></input>
 						<h3>Password:</h3>
-						<input className="password-input" type="text" placeholder="Password"></input>
+						<input className="password-input" type="password" placeholder="********"></input>
 					</div>
 					<div>
 						<Link href="/signup" passHref={true}>
