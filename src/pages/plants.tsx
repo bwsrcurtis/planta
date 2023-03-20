@@ -16,7 +16,7 @@ const Plants = () => {
 				return (
 					<>
 						<Head>
-							<title>My Plants</title>
+							<title>My Garden</title>
 						</Head>
 						<h1>plants</h1>
 					</>
