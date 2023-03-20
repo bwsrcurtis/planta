@@ -4,6 +4,10 @@
 	--font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
 		"Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
 		"Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+	--main-bg-color: darkslategrey;
+	--form-bg-color: rgb(38, 104, 66);
+	--light-accent-color: #e64a18;
+	--dark-accent-color: #bb350c;
 }
 
 html,
@@ -13,7 +17,7 @@ body {
 	overflow-x: hidden;
 	overflow-y: hidden;
 	font-family: "roboto";
-	background-color: darkslategrey;
+	background-color: var(--main-bg-color);
 	color: white;
 }
 
@@ -57,7 +61,7 @@ body {
 	height: fit-content;
 	padding: 2.5rem 5rem;
 	border-radius: 0.5rem;
-	background-color: rgb(38, 104, 66);
+	background-color: var(--form-bg-color);
 }
 
 .login-form > input {
@@ -95,7 +99,7 @@ body {
 	height: fit-content;
 	padding: 2.5rem 5rem;
 	border-radius: 0.5rem;
-	background-color: rgb(38, 104, 66);
+	background-color: var(--form-bg-color);
 }
 
 .details > input {
@@ -127,4 +131,16 @@ body {
 
 .signup-form > div > .button {
 	width: 50%;
+}
+
+@media screen and (max-width: 850px) {
+	.details {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+	.details > h3 {
+		width: 50%;
+	}
 }
