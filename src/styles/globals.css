@@ -76,3 +76,55 @@ body {
 .password-input {
 	margin-bottom: 1rem;
 }
+
+.signup-flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	height: 100vh;
+	width: 100%;
+}
+
+.signup-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	height: fit-content;
+	padding: 2.5rem 5rem;
+	border-radius: 0.5rem;
+	background-color: rgb(38, 104, 66);
+}
+
+.details > input {
+	border: none;
+	padding: 10px;
+	border-radius: 0.5rem;
+	margin: 5px;
+}
+
+.details {
+	display: flex;
+	padding: 10px;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+}
+
+.details > h3 {
+	text-align: left;
+	margin-bottom: 0;
+	margin: 5px;
+	width: 18%;
+}
+
+.password-input {
+	margin-bottom: 1rem;
+}
+
+.signup-form > div > .button {
+	width: 50%;
+}
