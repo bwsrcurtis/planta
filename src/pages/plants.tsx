@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Button from '@/components/Button';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useState, useEffect } from 'react';
+import CreatePlant from '@/components/createPlant';
 
 const Plants = () => {
 
@@ -15,17 +16,15 @@ const Plants = () => {
 
 	const { data: session } = useSession();
 
+
 	if (session) {
 		return (
 			<>
 				<Head>
 					<title>My Garden</title>
 				</Head>
-				<div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
-					<h1>{`${session?.user?.email}`}</h1>
-					<h1>{`${session?.user?.name}`}</h1>
-					<Image alt='Plant Logo Image' src={`${session?.user?.image}`}
-						width={150} height={150} onLoadingComplete={() => fadeIn()}></Image>
+				<div>
+					<CreatePlant />
 				</div>
 			</>
 		);
