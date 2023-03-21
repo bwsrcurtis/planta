@@ -14,8 +14,6 @@ function HomePage() {
     setHasLoaded(true);
   };
   if (session) {
-    console.log(session?.user?.name);
-    console.log(session?.user?.email);;
     return (
       <>
         <Head>
