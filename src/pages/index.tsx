@@ -14,12 +14,12 @@ function HomePage() {
   return (
     <>
       <Head>
-        <title>Planta App</title>
+        <title>Gardienne</title>
       </Head>
       <div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
         <Image alt='Plant Logo Image' src='/potted-plant-icon.png'
           width={150} height={150} onLoadingComplete={() => fadeIn()}></Image>
-        <h2>Welcome to Planta!</h2>
+        <h2>Welcome to Gardienne!</h2>
         <p>Plantcare Made Easy</p>
         <Link href='/login' passHref={true}>
           <Button name='Enter Your Garden'></Button></Link>

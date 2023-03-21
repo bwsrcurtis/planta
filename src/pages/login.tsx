@@ -20,7 +20,7 @@ function Login() {
 				<div className={`login-form ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
 					<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
 						width={100} height={100} onLoadingComplete={() => fadeIn()}></Image>
-					<h1 className="title">Planta</h1>
+					<h1 className="title">Gardienne</h1>
 					<h2>Email:</h2>
 					<input type="text" placeholder="Email"></input>
 					<h2>Password:</h2>

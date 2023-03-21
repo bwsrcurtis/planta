@@ -23,16 +23,23 @@ body {
 }
 
 .loading-div {
-	width: 100%;
+	width: fit-content;
 	height: auto;
+	padding: 2rem;
 	overflow-y: hidden;
 	position: static;
 	text-align: center;
 	margin: 15% auto;
+	border-radius: 0.5rem;
+	background-color: var(--form-bg-color);
 }
 
 .loading-div > img {
 	margin: 0 auto;
+}
+
+.loading-div > h2 {
+	text-shadow: 3px 2px var(--dark-accent-color);
 }
 
 .is-loading {
@@ -41,11 +48,11 @@ body {
 
 .is-loaded {
 	opacity: 100;
-	transition: opacity 2s;
+	transition: opacity 0.5s;
 }
 
 .title {
-	text-shadow: 2px 2px var(--green-accent-color);
+	text-shadow: 3px 2px var(--dark-accent-color);
 }
 
 .login-flex {
