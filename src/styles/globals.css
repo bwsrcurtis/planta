@@ -4,11 +4,11 @@
 	--font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
 		"Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
 		"Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-	--main-bg-color: darkslategrey;
+	--main-bg-color: rgb(48, 80, 80);
 	--form-bg-color: rgb(38, 104, 66);
-	--green-accent-color: #7cb041;
-	--light-accent-color: #e64a18;
-	--dark-accent-color: #bb350c;
+	--green-accent-color: rgb(124, 176, 65);
+	--light-accent-color: rgb(230, 74, 24);
+	--dark-accent-color: rgb(187, 53, 12);
 }
 
 html,
