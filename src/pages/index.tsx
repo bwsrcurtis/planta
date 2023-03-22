@@ -21,9 +21,9 @@ function HomePage() {
         </Head>
         <div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
           <Image alt='Plant Logo Image' src='/potted-plant-icon.png'
-            width={150} height={150} onLoadingComplete={() => fadeIn()}></Image>
-          <h2>Welcome to Gardienne!</h2>
-          <p>Plantcare Made Easy</p>
+            width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
+          <h1>Welcome to Gardienne!</h1>
+          <h2>Plantcare Made Easy</h2>
           <Link href='/plants' passHref={true}>
             <Button name='Enter Your Garden'></Button></Link>
         </div>

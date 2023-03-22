@@ -46,7 +46,7 @@ body {
 	margin: 0 auto;
 }
 
-.loading-div > h2 {
+.loading-div > h1 {
 	text-shadow: 3px 2px var(--dark-accent-color);
 }
 

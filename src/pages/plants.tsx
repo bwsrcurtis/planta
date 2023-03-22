@@ -27,7 +27,7 @@ const Plants = () => {
 				<div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
 					<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
 						width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
-					<h2>Welcome to Your Garden!</h2>
+					<h1>Welcome to Your Garden!</h1>
 					<div className='plantdiv'>
 						<PlantDisplay></PlantDisplay>
 					</div>
