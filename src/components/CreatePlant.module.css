@@ -1,5 +1,5 @@
 .formgroup {
-	width: 100%;
+	width: 90%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -15,9 +15,18 @@
 	border: none;
 	padding: 10px;
 	border-radius: 0.5rem;
+	width: 10rem;
+}
+
+.formgroup > select {
+	border: none;
+	padding: 10px;
+	border-radius: 0.5rem;
+	width: 11.25rem;
 }
 
 .formgroup > button {
 	margin: 1rem auto 0 auto;
 	align-self: center;
+	width: 100%;
 }

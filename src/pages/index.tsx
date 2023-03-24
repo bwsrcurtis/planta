@@ -20,8 +20,10 @@ function HomePage() {
           <title>Gardienne</title>
         </Head>
         <div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
-          <Image alt='Plant Logo Image' src='/potted-plant-icon.png'
-            width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
+          <Link href='/plants'>
+            <Image alt='Plant Logo Image' src='/potted-plant-icon.png'
+              width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
+          </Link>
           <h1>Welcome to Gardienne!</h1>
           <h2>Plantcare Made Easy</h2>
           <Link href='/plants' passHref={true}>

@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Add() {
 
@@ -16,12 +17,14 @@ export default function Add() {
 	return (
 		<>
 			<Head>
-				<title>Add Plant</title>
+				<title>New Plant</title>
 			</Head>
 			<div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
-				<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
-					width={150} height={150} onLoadingComplete={() => fadeIn()}></Image>
-				<h2>Add Your Plant</h2>
+				<Link href='/plants'>
+					<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
+						width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
+				</Link>
+				<h2>New Plant</h2>
 				<CreatePlant display={display} />
 			</div>
 		</>

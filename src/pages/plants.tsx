@@ -25,8 +25,10 @@ const Plants = () => {
 					<title>My Garden</title>
 				</Head>
 				<div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
-					<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
-						width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
+					<Link href='/plants'>
+						<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
+							width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
+					</Link>
 					<h1>Welcome to Your Garden!</h1>
 					<div className='plantdiv'>
 						<PlantDisplay></PlantDisplay>
@@ -48,8 +50,10 @@ const Plants = () => {
 				<title>Gardienne</title>
 			</Head>
 			<div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
-				<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
-					width={150} height={150} onLoadingComplete={() => fadeIn()}></Image>
+				<Link href='/plants'>
+					<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
+						width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
+				</Link>
 				<h2>Welcome to Gardienne!</h2>
 				<p>Plantcare Made Easy</p>
 				<Link href='/api/auth/signin' passHref={true}>
