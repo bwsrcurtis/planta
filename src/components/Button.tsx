@@ -1,7 +1,7 @@
 import styles from './Button.module.css';
 
 
-const Button = ({ name, type, ...props }: { name: string, type?: any, onClick?: () => void }) => {
+const Button = ({ name, type, ...props }: { name: string, type?: any, onClick?: React.MouseEventHandler<HTMLElement> }) => {
 	if (type) {
 		return (
 			<>
