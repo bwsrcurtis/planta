@@ -14,7 +14,9 @@
 
 [X] Plant Info Upload and Display
 
-[ ] Plant Info Edit and Delete
+[X] Plant Info Delete
+
+[ ] Plant Info Edit
 
 [ ] Plant Care Reminders (Email and Text)
 
