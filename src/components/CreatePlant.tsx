@@ -2,6 +2,7 @@ import styles from './CreatePlant.module.css';
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Button from './Button';
+import { useSession } from 'next-auth/react';
 
 export default function CreatePlant({ display }: { display: any }) {
 	const [name, setName] = useState('');
@@ -11,6 +12,9 @@ export default function CreatePlant({ display }: { display: any }) {
 	const [error, setError] = useState('');
 	const [message, setMessage] = useState('');
 	const router = useRouter();
+	const { data: session } = useSession();
+
+	const id = session?.user?.id;
 
 	const displayVar = {
 		display: `${display}`,
@@ -23,7 +27,7 @@ export default function CreatePlant({ display }: { display: any }) {
 		if (name && name.length < 12 && type && health && waterFreq) {
 			// send a request to the server.
 			try {
-				const body = { name, type, health, waterFreq };
+				const body = { name, type, health, waterFreq, id };
 				await fetch('/api/plants/create', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },

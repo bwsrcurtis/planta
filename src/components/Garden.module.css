@@ -1,0 +1,110 @@
+.top {
+	width: 100%;
+	height: 5%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem 1rem 1rem;
+}
+
+.top > div > a {
+	display: flex;
+	text-shadow: 3px 2px var(--dark-accent-color);
+	text-decoration: none;
+	color: white;
+	margin: 0;
+}
+
+.top > div > a > h1 {
+	margin: 0;
+}
+
+.top > button {
+	padding: 0;
+	width: 5rem;
+	height: 2.5rem;
+}
+
+.plantsdiv {
+	width: 100%;
+	height: 90%;
+	background-color: rgb(124, 176, 65, 0.3);
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+	overflow-y: scroll;
+	position: relative;
+}
+
+.plantsdiv > .categories {
+	width: 100%;
+	height: 10%;
+	background-color: rgb(38, 104, 66, 0.8);
+	display: flex;
+	align-items: center;
+	position: static;
+}
+
+.plantsdiv > .categories > h1 {
+	margin: 0 1rem;
+}
+
+.type {
+	width: 7.5%;
+	text-align: left;
+}
+
+.name {
+	width: 20%;
+	text-align: left;
+}
+
+.health {
+	width: 25%;
+	text-align: left;
+}
+
+.waterfreq {
+	width: 10%;
+	text-align: left;
+}
+
+.hiddenbutton {
+	width: 10%;
+	height: 100%;
+}
+
+.plantsdiv > .add {
+	width: 100%;
+	height: 10%;
+	background-color: rgb(230, 74, 24, 0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	bottom: 0;
+}
+
+.plantsdiv > .add:hover {
+	background-color: rgb(187, 53, 12, 0.6);
+	cursor: pointer;
+}
+
+.add > a {
+	text-decoration: none;
+	width: 100%;
+}
+
+.add > a > h1 {
+	margin: 0;
+	text-decoration: none;
+}
+
+.lowerdiv {
+	width: 100%;
+	height: 5%;
+}
+
+.lowerdiv > h1 {
+	text-shadow: 3px 2px var(--dark-accent-color);
+	margin: 0;
+}

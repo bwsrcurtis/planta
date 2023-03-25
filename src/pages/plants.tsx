@@ -3,12 +3,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
-import PlantDisplay from '@/components/PlantDisplay';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import prisma from '../../prisma/prisma';
+import Garden from '@/components/Garden';
+import { useSession, signIn, signOut, getSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 
 
-const Plants = () => {
+const Plants = ({ plants }: { plants: any }) => {
 
 	const [hasLoaded, setHasLoaded] = useState(false);
 	function fadeIn() {
@@ -24,22 +25,8 @@ const Plants = () => {
 				<Head>
 					<title>My Garden</title>
 				</Head>
-				<div className={`loading-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
-					<Link href='/plants'>
-						<Image alt='Plant Logo Image' src='/potted-plant-icon.png'
-							width={125} height={125} onLoadingComplete={() => fadeIn()}></Image>
-					</Link>
-					<h1>Welcome to Your Garden!</h1>
-					<div className='plantdiv'>
-						<PlantDisplay></PlantDisplay>
-					</div>
-					<div className='buttondiv'>
-						<Link href='/add' passHref={true}>
-							<Button name='➕ 🌿'></Button>
-						</Link>
-						<div onClick={() => signOut()}>
-							<Button name='Sign Out'></Button>
-						</div></div>
+				<div className={`garden-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
+					<Garden plants={plants}></Garden>
 				</div>
 			</>
 		);
@@ -63,3 +50,25 @@ const Plants = () => {
 };
 
 export default Plants;
+
+export const getServerSideProps = async ({ req }: { req: any }) => {
+	const session = await getSession({ req });
+	const id = session?.user?.id;
+	const plants = await prisma.plant.findMany({
+		where: {
+			userId: id,
+		},
+		select: {
+			id: true,
+			name: true,
+			type: true,
+			health: true,
+			waterFreq: true,
+		}
+	},);
+	return {
+		props: {
+			plants
+		},
+	};
+};

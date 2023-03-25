@@ -153,6 +153,27 @@ body {
 	width: 50%;
 }
 
+.garden-div {
+	width: 80%;
+	height: 90vh;
+	padding: 2rem;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	position: relative;
+	text-align: center;
+	margin: 0.5% auto;
+	border-radius: 0.5rem;
+	background-color: var(--form-bg-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttondiv {
+	display: flex;
+}
+
 @media screen and (max-width: 850px) {
 	.details {
 		display: flex;
@@ -163,8 +184,4 @@ body {
 	.details > h3 {
 		width: 50%;
 	}
-}
-
-.buttondiv {
-	display: flex;
 }
