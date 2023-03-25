@@ -36,7 +36,7 @@ export default function PlantDisplay({ plantid, name, type, health, waterFreq }:
 	} else if (waterFreq === 'weekly') {
 		waterFreq = 'Weekly';
 	} else if (waterFreq === 'twowks') {
-		waterFreq = 'BiWeekly';
+		waterFreq = 'Bi-Weekly';
 	} else {
 		waterFreq = 'No Notifs';
 	}
