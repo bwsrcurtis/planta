@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import styles from './PlantDisplay.module.css';
 import Button from './Button';
 
 export default function PlantDisplay({ plantid, name, type, health, waterFreq }: { plantid: any, name: string, type: string, health: string, waterFreq: string }) {
+	const [error, setError] = useState('');
+	const [message, setMessage] = useState('');
+	const router = useRouter();
+	const session = useSession();
 
 	if (health === '1') {
 		health = '🌿';
@@ -41,6 +46,20 @@ export default function PlantDisplay({ plantid, name, type, health, waterFreq }:
 		waterFreq = 'No Notifs';
 	}
 
+
+	const deletePlant = async (id: any, userId: any) => {
+		try {
+			await fetch('/api/plants/delete', {
+				method: 'DELETE',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ id, userId }),
+			});
+			router.reload();
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	return (
 		<div className={styles.plantinfo}>
 
@@ -50,7 +69,7 @@ export default function PlantDisplay({ plantid, name, type, health, waterFreq }:
 			<h3 className={styles.waterfreq}>{waterFreq}</h3>
 			<div>
 				<Button data-plantid={plantid} name='🖋' onClick={(e: any) => console.log(e.target.dataset.plantid)}></Button>
-				<Button data-plantid={plantid} name='❌' onClick={(e: any) => console.log(e.target.dataset.plantid)}></Button>
+				<Button data-plantid={plantid} name='❌' onClick={(e: any) => deletePlant(e.target.dataset.plantid, session.data?.user.id)}></Button>
 			</div>
 		</div >
 	);
