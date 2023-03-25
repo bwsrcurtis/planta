@@ -12,7 +12,9 @@
 
 [X] Login and Auth
 
-[ ] Plant Info Upload
+[X] Plant Info Upload and Display
+
+[ ] Plant Info Edit and Delete
 
 [ ] Plant Care Reminders (Email and Text)
 
