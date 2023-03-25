@@ -44,8 +44,8 @@ export default function PlantDisplay({ plantid, name, type, health, waterFreq }:
 	return (
 		<div className={styles.plantinfo}>
 
-			<h3 className={styles.name}>{name}</h3>
 			<h3 className={styles.type}>{type}</h3>
+			<h3 className={styles.name}>{name}</h3>
 			<h3 className={styles.health}>{health}</h3>
 			<h3 className={styles.waterfreq}>{waterFreq}</h3>
 			<div>
