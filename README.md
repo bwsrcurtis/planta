@@ -1,6 +1,6 @@
 # Planta
 
-![Planta](https://user-images.githubusercontent.com/44857032/214439960-03609af5-8770-4c8e-abd9-9df01292156d.JPG)
+![image](https://user-images.githubusercontent.com/44857032/227750945-96aa79b0-77dc-4eef-88f3-1c86f81c71d2.png)
 
 ## Fullstack application built with NextJS
 
