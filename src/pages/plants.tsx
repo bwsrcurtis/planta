@@ -10,13 +10,16 @@ import { useState, useEffect } from 'react';
 
 
 const Plants = ({ plants }: { plants: any }) => {
+	const { data: session } = useSession();
 
 	const [hasLoaded, setHasLoaded] = useState(false);
-	function fadeIn() {
-		setHasLoaded(true);
-	};
 
-	const { data: session } = useSession();
+	function fadeIn() {
+		console.log('fade in');
+		const gardenDiv = document.querySelector('.garden-div');
+		setTimeout(() => { gardenDiv?.classList.add('is-loaded'); }, 100);
+		console.log('added');
+	};
 
 
 	if (session) {
@@ -25,7 +28,7 @@ const Plants = ({ plants }: { plants: any }) => {
 				<Head>
 					<title>My Garden</title>
 				</Head>
-				<div className={`garden-div ${hasLoaded ? 'is-loaded' : 'is-loading'}`}>
+				<div className='garden-div is-loading' onLoad={() => fadeIn()}>
 					<Garden plants={plants}></Garden>
 				</div>
 			</>
@@ -49,7 +52,9 @@ const Plants = ({ plants }: { plants: any }) => {
 	);
 };
 
+
 export default Plants;
+
 
 export const getServerSideProps = async ({ req }: { req: any }) => {
 	const session = await getSession({ req });
