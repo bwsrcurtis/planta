@@ -1,24 +1,36 @@
 import styles from './CreatePlant.module.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Button from './Button';
 import { useSession } from 'next-auth/react';
+import { withRouter } from 'next/router';
 
-export default function CreatePlant({ display }: { display: any }) {
-	const [name, setName] = useState('');
-	const [type, setType] = useState('foliage');
-	const [health, setHealth] = useState('1');
-	const [waterFreq, setWaterFreq] = useState('daily');
+export default function EditPlant(props: any) {
 	const [error, setError] = useState('');
 	const [message, setMessage] = useState('');
 	const router = useRouter();
 	const { data: session } = useSession();
+	const [plantId, setPlantId] = useState(router.query.plantId);
+	const [name, setName] = useState(router.query.name);
+	const [health, setHealth] = useState(router.query.health);
+	const [waterFreq, setWaterFreq] = useState(router.query.waterFreq);
+	const [type, setType] = useState(() => {
+		if (router.query.type === '🍃') {
+			return 'foliage';
+		} else if (router.query.type === '🌼') {
+			return 'flowering';
+		} else if (router.query.type === '🍏') {
+			return 'fruit';
+		} else if (router.query.type === '🌵') {
+			return 'cacti';
+		} else {
+			return 'other';
+		};
+	});
 
 	const id = session?.user?.id;
 
-	const displayVar = {
-		display: `${display}`,
-	};
+
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
@@ -27,8 +39,8 @@ export default function CreatePlant({ display }: { display: any }) {
 		if (name && name.length < 12 && type && health && waterFreq) {
 			// send a request to the server.
 			try {
-				const body = { name, type, health, waterFreq, id };
-				await fetch('/api/plants/create', {
+				const body = { name, type, health, waterFreq, plantId };
+				await fetch('/api/plants/edit', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(body),
@@ -56,7 +68,7 @@ export default function CreatePlant({ display }: { display: any }) {
 
 	return (
 
-		<div style={displayVar} className={styles.addplantform}>
+		<div className={styles.addplantform}>
 			<form onSubmit={handleSubmit}>
 				{
 					error ? (
@@ -75,7 +87,8 @@ export default function CreatePlant({ display }: { display: any }) {
 				<div className={styles.formgroup}>
 
 					<h3>Name</h3>
-					<input type="text" name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+					<input type="text" name="name" placeholder="Name" value={name}
+						onChange={(e) => setName(e.target.value)} />
 				</div>
 				<div className={styles.formgroup}>
 
@@ -102,7 +115,8 @@ export default function CreatePlant({ display }: { display: any }) {
 				<div className={styles.formgroup}>
 
 					<h3>Care Notifications</h3>
-					<select name="waterFreq" value={waterFreq} onChange={(e) => setWaterFreq(e.target.value)}>
+					<select name="waterFreq" value={waterFreq}
+						onChange={(e) => setWaterFreq(e.target.value)}>
 						<option value='daily'>Daily</option>
 						<option value='mwf'>M/W/F</option>
 						<option value='weekly'>Weekly</option>
@@ -111,7 +125,7 @@ export default function CreatePlant({ display }: { display: any }) {
 					</select>
 				</div>
 				<div className={styles.formgroup}>
-					<Button name="Add" type="submit"></Button>
+					<Button name="Update" type="submit"></Button>
 				</div>
 			</form>
 		</div>

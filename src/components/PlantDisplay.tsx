@@ -26,8 +26,8 @@ export default function PlantDisplay({ plantid, name, type, health, waterFreq }:
 		type = '🍃';
 	} else if (type === 'flowering') {
 		type = '🌼';
-	} else if (type === 'succulent') {
-		type = '🌵';
+	} else if (type === 'fruit') {
+		type = '🍏';
 	} else if (type === 'cacti') {
 		type = '🌵';
 	} else {
@@ -46,6 +46,18 @@ export default function PlantDisplay({ plantid, name, type, health, waterFreq }:
 		waterFreq = 'No Notifs';
 	}
 
+	const goToEdit = (plantId: any, name: any, type: any, health: any, waterFreq: any) => {
+		router.push({
+			pathname: '/edit',
+			query: {
+				plantId: plantId,
+				name: name,
+				type: type,
+				health: health,
+				waterFreq: waterFreq
+			}
+		}, '/edit');
+	};
 
 	const deletePlant = async (id: any, userId: any) => {
 		try {
@@ -68,7 +80,7 @@ export default function PlantDisplay({ plantid, name, type, health, waterFreq }:
 			<h3 className={styles.health}>{health}</h3>
 			<h3 className={styles.waterfreq}>{waterFreq}</h3>
 			<div>
-				<Button data-plantid={plantid} name='🖋' onClick={(e: any) => console.log(e.target.dataset.plantid)}></Button>
+				<Button data-plantid={plantid} name='🖋' onClick={() => goToEdit(plantid, name, type, health, waterFreq)}></Button>
 				<Button data-plantid={plantid} name='❌' onClick={(e: any) => deletePlant(e.target.dataset.plantid, session.data?.user.id)}></Button>
 			</div>
 		</div >

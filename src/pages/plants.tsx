@@ -15,10 +15,8 @@ const Plants = ({ plants }: { plants: any }) => {
 	const [hasLoaded, setHasLoaded] = useState(false);
 
 	function fadeIn() {
-		console.log('fade in');
 		const gardenDiv = document.querySelector('.garden-div');
 		setTimeout(() => { gardenDiv?.classList.add('is-loaded'); }, 100);
-		console.log('added');
 	};
 
 
