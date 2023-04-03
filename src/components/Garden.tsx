@@ -1,4 +1,4 @@
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -24,7 +24,7 @@ export default function Garden({ plants }: { plants: any }) {
 					</Link>
 				</div>
 
-				<Button name='Sign Out'></Button>
+				<Button name='Sign Out' onClick={() => signOut()}></Button>
 			</div>
 			<div className={styles.plantsdiv}>
 				<div className={styles.categories}>

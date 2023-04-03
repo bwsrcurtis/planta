@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import Button from '@/components/Button';

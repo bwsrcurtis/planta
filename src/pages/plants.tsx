@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Button from '@/components/Button';
 import prisma from '../../prisma/prisma';
 import Garden from '@/components/Garden';
-import { useSession, signIn, signOut, getSession } from 'next-auth/react';
-import { useState, useEffect } from 'react';
+import { useSession, getSession } from 'next-auth/react';
+import { useState } from 'react';
 
 
 const Plants = ({ plants }: { plants: any }) => {
