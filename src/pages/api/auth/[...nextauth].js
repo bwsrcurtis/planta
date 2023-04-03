@@ -11,7 +11,7 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-  secret: process.env.GOOGLE_SECRET,
+  secret: process.env.secret,
   callbacks: {
     async session({ session, token, user }) {
       session.user.id = user.id;
