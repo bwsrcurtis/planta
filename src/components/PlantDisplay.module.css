@@ -29,16 +29,50 @@
 }
 
 .name {
-	width: 20%;
+	width: 15%;
 	text-align: left;
 }
 
 .health {
-	width: 25%;
+	width: 30%;
 	text-align: left;
 }
 
 .waterfreq {
 	width: 10%;
 	text-align: left;
+}
+
+@media screen and (max-width: 850px) {
+	.waterfreq {
+		display: none;
+	}
+
+	.health {
+		width: 25%;
+		font-size: 1rem;
+	}
+
+	.name {
+		font-size: 0.75rem;
+	}
+	.type {
+		font-size: 1rem;
+	}
+
+	.plantinfo > div {
+		margin-left: auto;
+		margin-right: 2rem;
+		display: flex;
+		width: 22%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.health {
+		font-size: 0.75rem;
+	}
+	.type {
+		font-size: 0.75rem;
+	}
 }
