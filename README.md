@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/44857032/227750945-96aa79b0-77dc-4eef-88f3-1c86f81c71d2.png)
 
-## [Live Site](https://planta-dj4vk7j31-bwsrcurtis.vercel.app/)
+## [Live Site](https://planta-three.vercel.app/)
 
 ## Fullstack application built with NextJS
 
