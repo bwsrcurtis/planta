@@ -12,8 +12,23 @@ export default function EditPlant(props: any) {
 	const { data: session } = useSession();
 	const [plantId, setPlantId] = useState(router.query.plantId);
 	const [name, setName] = useState(router.query.name);
-	const [health, setHealth] = useState(router.query.health);
 	const [waterFreq, setWaterFreq] = useState(router.query.waterFreq);
+	const [health, setHealth] = useState(() => {
+		if (router.query.health === '🌿') {
+			return '1';
+		} else if (router.query.health === '🌿🌿') {
+			return '2';
+		} else if (router.query.health === '🌿🌿🌿') {
+			return '3';
+		} else if (router.query.health === '🌿🌿🌿🌿') {
+			return '4';
+		} else if (router.query.health === '🌿🌿🌿🌿🌿') {
+			return '5';
+		} else {
+			return router.query.health;
+		};
+	});
+
 	const [type, setType] = useState(() => {
 		if (router.query.type === '🍃') {
 			return 'foliage';
