@@ -23,7 +23,6 @@ export default function Garden({ plants }: { plants: any }) {
 						<h1>Gardienne</h1>
 					</Link>
 				</div>
-
 				<Button name='Sign Out' onClick={() => signOut({ callbackUrl: '/' })}></Button>
 			</div>
 			<div className={styles.plantsdiv}>
