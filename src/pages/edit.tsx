@@ -13,10 +13,6 @@ export default function Edit({ plantId, name, type, health, waterFreq }:
 		setHasLoaded(true);
 	};
 
-
-
-
-
 	return (
 		<>
 			<Head>
