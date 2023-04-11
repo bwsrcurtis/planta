@@ -13,6 +13,7 @@ function HomePage() {
   function fadeIn() {
     setHasLoaded(true);
   };
+
   if (session) {
     return (
       <>
@@ -31,6 +32,7 @@ function HomePage() {
         </div>
       </>);
   }
+
   return (
     <>
       <Head>
