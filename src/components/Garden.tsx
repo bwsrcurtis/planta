@@ -7,6 +7,7 @@ import Button from './Button';
 import PlantDisplay from './PlantDisplay';
 
 export default function Garden({ plants }: { plants: any }) {
+
 	const { data: session } = useSession();
 	const [hasLoaded, setHasLoaded] = useState(false);
 	function fadeIn() {

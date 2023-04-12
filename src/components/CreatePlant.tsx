@@ -5,6 +5,7 @@ import Button from './Button';
 import { useSession } from 'next-auth/react';
 
 export default function CreatePlant({ display }: { display: any }) {
+
 	const [name, setName] = useState('');
 	const [type, setType] = useState('foliage');
 	const [health, setHealth] = useState('1');
@@ -24,6 +25,7 @@ export default function CreatePlant({ display }: { display: any }) {
 		e.preventDefault();
 		setError('');
 		setMessage('');
+
 		if (name && name.length < 12 && type && health && waterFreq) {
 			// send a request to the server.
 			try {
@@ -37,6 +39,7 @@ export default function CreatePlant({ display }: { display: any }) {
 			} catch (error) {
 				console.error(error);
 			}
+
 		} else {
 			if (!name) {
 				setError('Name required');
@@ -115,6 +118,5 @@ export default function CreatePlant({ display }: { display: any }) {
 				</div>
 			</form>
 		</div>
-
 	);
 }

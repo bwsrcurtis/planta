@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function Edit({ plantId, name, type, health, waterFreq }:
+	
 	{ plantId: any, name: any, type: any, health: any, waterFreq: any }) {
 
 	const [hasLoaded, setHasLoaded] = useState(false);

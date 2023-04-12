@@ -10,6 +10,7 @@ import { useState } from 'react';
 
 
 const Plants = ({ plants }: { plants: any }) => {
+
 	const { data: session } = useSession();
 
 	const [hasLoaded, setHasLoaded] = useState(false);
@@ -32,6 +33,7 @@ const Plants = ({ plants }: { plants: any }) => {
 			</>
 		);
 	};
+
 	return (
 		<>
 			<Head>
@@ -49,8 +51,6 @@ const Plants = ({ plants }: { plants: any }) => {
 			</div></>
 	);
 };
-
-
 export default Plants;
 
 

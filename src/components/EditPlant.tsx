@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import { withRouter } from 'next/router';
 
 export default function EditPlant(props: any) {
+
 	const [error, setError] = useState('');
 	const [message, setMessage] = useState('');
 	const router = useRouter();
@@ -13,6 +14,7 @@ export default function EditPlant(props: any) {
 	const [plantId, setPlantId] = useState(router.query.plantId);
 	const [name, setName] = useState(router.query.name);
 	const [waterFreq, setWaterFreq] = useState(router.query.waterFreq);
+
 	const [health, setHealth] = useState(() => {
 		if (router.query.health === '🌿') {
 			return '1';
@@ -44,7 +46,6 @@ export default function EditPlant(props: any) {
 	});
 
 	const id = session?.user?.id;
-
 
 
 	const handleSubmit = async (e: any) => {
