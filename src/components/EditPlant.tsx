@@ -13,7 +13,22 @@ export default function EditPlant(props: any) {
 	const { data: session } = useSession();
 	const [plantId, setPlantId] = useState(router.query.plantId);
 	const [name, setName] = useState(router.query.name);
-	const [waterFreq, setWaterFreq] = useState(router.query.waterFreq);
+
+	const [waterFreq, setWaterFreq] = useState(() => {
+		if (router.query.waterFreq === 'Daily') {
+			return 'daily';
+		} else if (router.query.waterFreq === 'Weekly') {
+			return 'weekly';
+		} else if (router.query.waterFreq === 'M/W/F') {
+			return 'mwf';
+		} else if (router.query.waterFreq === 'Bi-Weekly') {
+			return 'twowks';
+		} else if (router.query.waterFreq === 'No Notifs') {
+			return 'nonotifs';
+		} else {
+			return router.query.health;
+		};
+	});
 
 	const [health, setHealth] = useState(() => {
 		if (router.query.health === '🌿') {
